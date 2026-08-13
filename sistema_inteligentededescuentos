@@ -1,0 +1,51 @@
+print("========================================")
+print("          FACTURA DE COMPRA")
+print("========================================")
+
+nombre = input("Ingrese el nombre del cliente: ")
+edad = int(input("Ingrese la edad: "))
+compra = float(input("Ingrese el monto de la compra: C$ "))
+
+# Descuento por compra
+if compra >= 5000:
+    porcentaje_compra = 0.20
+elif compra >= 3000:
+    porcentaje_compra = 0.15
+elif compra >= 1000:
+    porcentaje_compra = 0.10
+else:
+    porcentaje_compra = 0
+
+descuento_compra = compra * porcentaje_compra
+
+# Descuento adicional por edad
+if edad >= 60:
+    porcentaje_edad = 0.05
+elif edad < 18:
+    porcentaje_edad = 0.02
+else:
+    porcentaje_edad = 0
+
+# El descuento adicional se calcula sobre el precio
+# despues del descuento por compra
+subtotal = compra - descuento_compra
+descuento_edad = subtotal * porcentaje_edad
+
+total = subtotal - descuento_edad
+
+print()
+print("========================================")
+print("          FACTURA DE COMPRA")
+print("========================================")
+print()
+print("Cliente:", nombre)
+print("Edad:", edad, "años")
+print()
+print("Compra: C$", format(compra, ",.2f"))
+print("Descuento por compra: C$", format(descuento_compra, ",.2f"))
+print("Descuento adicional: C$", format(descuento_edad, ",.2f"))
+print()
+print("Total a pagar: C$", format(total, ",.2f"))
+print()
+print("¡Gracias por su compra!")
+print("========================================")

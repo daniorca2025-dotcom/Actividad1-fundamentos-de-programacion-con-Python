@@ -1,0 +1,35 @@
+print("========================================")
+print("      CLASIFICACION ACADEMICA")
+print("========================================")
+
+nombre = input("Ingrese el nombre del estudiante: ")
+carrera = input("Ingrese la carrera: ")
+
+nota1 = float(input("Ingrese la primera nota: "))
+nota2 = float(input("Ingrese la segunda nota: "))
+nota3 = float(input("Ingrese la tercera nota: "))
+
+promedio = (nota1 + nota2 + nota3) / 3
+
+if promedio >= 90:
+    clasificacion = "Excelente"
+elif promedio >= 80:
+    clasificacion = "Muy Bueno"
+elif promedio >= 70:
+    clasificacion = "Bueno"
+elif promedio >= 60:
+    clasificacion = "Regular"
+else:
+    clasificacion = "Reprobado"
+
+print()
+print("========================================")
+print("          REPORTE ACADEMICO")
+print("========================================")
+print()
+print("Nombre:", nombre)
+print("Carrera:", carrera)
+print("Promedio:", format(promedio, ".2f"))
+print("Clasificacion:", clasificacion)
+print()
+print("========================================")
